@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 .langButton {
@@ -17,8 +19,8 @@
   color: white;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  margin-right: 50px;
+  margin-right: 20px;
 }

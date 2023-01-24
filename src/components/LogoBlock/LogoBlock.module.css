@@ -1,11 +1,54 @@
 .container {
-
+  height: 320px;
+  background-color: #FFFFFF;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  gap: 200px;
+  box-sizing: border-box;
 }
 
 .logo {
+  background-image: url('../../images/veniviLogo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px;
+  width: 244px;
 
 }
 
 .textContainer {
+  display: flex;
+  flex-direction: column;
+}
 
+.textVenivi {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 0 0 50px 0;
+  padding: 0;
+}
+
+.textAbout {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.textLogo {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
 }
