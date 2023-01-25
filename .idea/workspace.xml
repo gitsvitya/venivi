@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4fe3739-0c9c-4c09-bb2f-f7ca698b6042" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/RunningLine/RunningLine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RunningLine/RunningLine.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +77,9 @@
       <workItem from="1661197292733" duration="10000" />
       <workItem from="1671729511140" duration="1342000" />
       <workItem from="1674498044785" duration="6300000" />
-      <workItem from="1674541973964" duration="5772000" />
+      <workItem from="1674541973964" duration="10325000" />
+      <workItem from="1674637813852" duration="16366000" />
+      <workItem from="1674683902045" duration="1640000" />
     </task>
     <servers />
   </component>
