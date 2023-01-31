@@ -1,12 +1,18 @@
+.screenshotsBlock {
+  width: 100%;
+  background-color: #000000;
+}
+
 .container {
   height: 550px;
-  width: 1440px;
-  background-color: #000000;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
   box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {

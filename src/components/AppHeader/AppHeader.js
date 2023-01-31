@@ -6,7 +6,9 @@ const langName = 'Ru';
 function AppHeader() {
   return (
     <header className={styles.header}>
-      <button className={styles.langButton}>{langName}</button>
+      <div className = {styles.resCon}>
+        <button className={styles.langButton}>{langName}</button>
+      </div>
     </header>
   );
 }

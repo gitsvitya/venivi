@@ -4,6 +4,14 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
+import './fonts/Roboto-Bold.woff';
+import './fonts/Roboto-Light.woff';
+import './fonts/Roboto-Regular.woff';
+
+import './fonts/Roboto-Bold.woff2';
+import './fonts/Roboto-Light.woff2';
+import './fonts/Roboto-Regular.woff2';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
