@@ -13,8 +13,8 @@ function App() {
       <main className={styles.main}>
         <LogoBlock/>
         <AboutBlock/>
-        {/* <ScreenshotsBlock/>
-        <AuthorsBlock/> */}
+        <ScreenshotsBlock/>
+        {/* <AuthorsBlock/> */}
       </main>
       <AppFooter/>
     </div>
