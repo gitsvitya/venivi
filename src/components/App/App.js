@@ -12,8 +12,8 @@ function App() {
       <AppHeader/>
       <main className={styles.main}>
         <LogoBlock/>
-        {/* <AboutBlock/>
-        <ScreenshotsBlock/>
+        <AboutBlock/>
+        {/* <ScreenshotsBlock/>
         <AuthorsBlock/> */}
       </main>
       <AppFooter/>

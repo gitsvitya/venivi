@@ -6,7 +6,7 @@
 }
 
 .container {
-  height: 350px;
+  /* height: 350px; */
   max-width: 1440px;
   display: flex;
   flex-direction: column;
@@ -36,8 +36,9 @@
 }
 
 .textBox {
-  width: 400px;
-  max-height: 150px;
+  width: 100vw;
+  max-width: 100%;
+  /* max-height: 160px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +84,6 @@
 @media (max-width: 769px) {
   .container {
     padding: 30px;
-    height: 263px;
   }
   .header {
     font-size: 30px;
@@ -105,26 +105,26 @@
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 501px) {
   .container {
     padding: 40px 20px 20px 20px;
-    height: 500px;
   }
   .header {
     font-size: 28px;
     line-height: 32px;
+    text-align: center;
   }
   .textBoxes {
     flex-direction: column;
   }
   .textBox {
-    width: 280px;
+    /* max-width: 280px; */
   }
   .textBoxHeader {
     margin-bottom: 10px;
   }
   .textBoxParagraph {
-    padding: 0 15px 0 15px;
+    padding: 0;
     box-sizing: border-box;
     font-weight: 400;
     font-size: 14px;
