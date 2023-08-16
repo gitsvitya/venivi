@@ -1,6 +1,8 @@
 .aboutBlock {
   width: 100%;
   background-color: #FFCE00;
+  text-rendering: optimizeLegibility;
+  transition: all 0.5s linear;
 }
 
 .container {
@@ -28,7 +30,9 @@
 .textBoxes {
   display: flex;
   flex-direction: row;
+  width: 100%;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .textBox {
@@ -53,8 +57,8 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 28px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -70,8 +74,65 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 28px;
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 769px) {
+  .container {
+    padding: 30px;
+    height: 263px;
+  }
+  .header {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 30px;
+  }
+  .textBoxHeader {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+  .textBoxParagraph {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .textBoxListItem {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media (max-width: 321px) {
+  .container {
+    padding: 40px 20px 20px 20px;
+    height: 500px;
+  }
+  .header {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .textBoxes {
+    flex-direction: column;
+  }
+  .textBox {
+    width: 280px;
+  }
+  .textBoxHeader {
+    margin-bottom: 10px;
+  }
+  .textBoxParagraph {
+    padding: 0 15px 0 15px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .textBoxListItem {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
 }

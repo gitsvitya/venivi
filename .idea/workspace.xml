@@ -5,32 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4fe3739-0c9c-4c09-bb2f-f7ca698b6042" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Roboto-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/Modal.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ModalOverlay/ModalOverlauy.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ModalOverlay/ModalOverlay.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/close_button.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutBlock/AboutBlock.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppFooter/AppFooter.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/AppHeader.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorsBlock/AuthorsBlock.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoBlock/LogoBlock.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RunningLine/RunningLine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RunningLine/RunningLine.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ScreenshotsBlock/ScreenshotsBlock.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +28,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e946ddfc-f96a-4f8e-856e-06b40aecac0d" />
+        <option name="url" value="https://github.com/gitsvitya/venivi.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,7 +59,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/strok/Documents/git/venivi/src/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/strok/Documents/git/react-burger&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,7 +96,25 @@
       <workItem from="1674637813852" duration="16366000" />
       <workItem from="1674683902045" duration="1705000" />
       <workItem from="1674720649510" duration="7588000" />
-      <workItem from="1675149131744" duration="7414000" />
+      <workItem from="1675149131744" duration="8145000" />
+      <workItem from="1675238888583" duration="11832000" />
+      <workItem from="1675347812484" duration="3169000" />
+      <workItem from="1675407480885" duration="8555000" />
+      <workItem from="1675506850830" duration="1952000" />
+      <workItem from="1675610152716" duration="949000" />
+      <workItem from="1676112389249" duration="4329000" />
+      <workItem from="1676208723034" duration="1149000" />
+      <workItem from="1677694940243" duration="1513000" />
+      <workItem from="1678018792606" duration="99000" />
+      <workItem from="1678174584049" duration="803000" />
+      <workItem from="1678792410649" duration="157000" />
+      <workItem from="1678792609902" duration="1000" />
+      <workItem from="1680247316873" duration="14000" />
+      <workItem from="1680247382845" duration="5000" />
+      <workItem from="1682939424162" duration="12000" />
+      <workItem from="1682939837958" duration="2103000" />
+      <workItem from="1683632015688" duration="257000" />
+      <workItem from="1692087738658" duration="45000" />
     </task>
     <servers />
   </component>

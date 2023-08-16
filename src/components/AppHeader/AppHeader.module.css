@@ -1,6 +1,8 @@
 .header {
   background-color: #DF2626;
   width: 100%;
+  text-rendering: optimizeLegibility;
+  transition: all 0.5s linear;
 }
 
 .resCon {
@@ -26,7 +28,28 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 28px;
   margin-right: 20px;
+}
+
+@media (max-width: 769px) {
+  .resCon {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .langButton {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 321px) {
+  .resCon {
+    height: 60px;
+    padding: 20px;
+  }
+  .langButton {
+    width: 50px;
+  }
 }

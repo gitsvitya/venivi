@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ScreenshotsBlock.module.css';
 
 function ScreenshotsBlock() {
+
   return (
     <div className={styles.screenshotsBlock}>
       <div className={styles.container}>

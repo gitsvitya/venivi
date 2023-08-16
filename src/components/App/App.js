@@ -12,9 +12,9 @@ function App() {
       <AppHeader/>
       <main className={styles.main}>
         <LogoBlock/>
-        <AboutBlock/>
+        {/* <AboutBlock/>
         <ScreenshotsBlock/>
-        <AuthorsBlock/>
+        <AuthorsBlock/> */}
       </main>
       <AppFooter/>
     </div>
