@@ -6,7 +6,6 @@
 }
 
 .container {
-  /* height: 550px; */
   max-width: 1440px;
   display: flex;
   flex-direction: column;
@@ -84,16 +83,10 @@
   }
   .screenshotsBox {
     gap: 5px;
-    /* justify-content: space-between; */
-  }
-  .screenshotMain {
   }
 }
 
 @media (max-width: 650px) {
-  .container {
-    /* height: 850px; */
-  }
   .screenshotsBox {
     flex-direction: column;
     justify-content: center;
@@ -103,7 +96,7 @@
 
 @media (max-width: 501px) {
   .container {
-    /* height: 850px; */
+    padding: 40px 20px 20px 20px;
   }
   .header {
     font-size: 28px;
@@ -113,12 +106,12 @@
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    /* width: 280px; */
   }
-  .screenshotMain {
-    /* width: 280px; */
-  }
-  .screenshotCont {
-    /* width: 280px; */
+}
+
+@media (max-width: 321px) {
+  .screenshotBox {
+    max-width: 200px;
+    max-height: 200px;
   }
 }

@@ -14,7 +14,7 @@ function App() {
         <LogoBlock/>
         <AboutBlock/>
         <ScreenshotsBlock/>
-        {/* <AuthorsBlock/> */}
+        <AuthorsBlock/>
       </main>
       <AppFooter/>
     </div>

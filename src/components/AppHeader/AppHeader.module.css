@@ -6,7 +6,6 @@
 }
 
 .resCon {
-  height: 80px;
   max-width: 1440px;
   display: flex;
   align-items: center;
@@ -22,15 +21,14 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  width: 96px;
-  height: 40px;
+  width: 100vw;
+  max-width: 96px;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  margin-right: 20px;
 }
 
 @media (max-width: 769px) {
@@ -44,12 +42,11 @@
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 501px) {
   .resCon {
-    height: 60px;
     padding: 20px;
   }
   .langButton {
-    width: 50px;
+    max-width: 50px;
   }
 }
