@@ -21,14 +21,14 @@ function ScreenshotsBlock(props) {
       return (
         <>
           <div className={styles.screenshotMain}></div>
-          <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigLeft}</figcaption>
+          <figcaption className={styles.screenshotFigModal}>{props.text.screenshotsBlockScreenshotFigLeft}</figcaption>
         </>
       );
     else
       return (
         <>
           <div className={styles.screenshotCont}></div>
-          <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigRight}</figcaption>
+          <figcaption className={styles.screenshotFigModal}>{props.text.screenshotsBlockScreenshotFigRight}</figcaption>
         </>
       );
   };
@@ -53,7 +53,7 @@ function ScreenshotsBlock(props) {
     {
       ModalOpen &&
       <Modal closeModal={closeModal}>
-        `${renderModalContent(ModalContent)}`
+        {renderModalContent(ModalContent)}
       </Modal>
     }
     </>

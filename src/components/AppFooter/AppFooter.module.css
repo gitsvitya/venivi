@@ -45,6 +45,10 @@
   cursor: pointer;
 }
 
+.link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 501px) {
   .container {
     padding: 20px;

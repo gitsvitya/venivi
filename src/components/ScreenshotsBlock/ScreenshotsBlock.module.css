@@ -71,6 +71,18 @@
   padding: 0;
   margin: 0;
 }
+
+.screenshotFigModal {
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 16px;
+  padding: 0;
+  margin-top: 10px;
+}
+
 @media (max-width: 950px) {
   .screenshotsBox {
     gap: 70px;
@@ -83,6 +95,10 @@
   }
   .screenshotsBox {
     gap: 5px;
+  }
+  .screenshotFigModal {
+    margin-top: 5px;
+    font-size: 16px;
   }
 }
 
@@ -106,6 +122,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 50px;
+  }
+  .screenshotFigModal {
+    font-size: 14px;
   }
 }
 

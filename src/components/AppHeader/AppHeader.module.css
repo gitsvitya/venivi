@@ -31,6 +31,10 @@
   line-height: 28px;
 }
 
+.langButton:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 769px) {
   .resCon {
     margin-left: 0;

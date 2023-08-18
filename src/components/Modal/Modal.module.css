@@ -1,12 +1,10 @@
 .modalWindow {
-  width: 720px;
-  /* height: fit-content; */
-  height: 720px;
+  width: 60vw;
+  height: 60vw;
+  max-width: 1056px;
+  max-height: 1023px;
   box-sizing: border-box;
-  background-color: #1C1C21;
-  border: 1px solid rgba(76, 76, 255, 0.2);
-  box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
-  border-radius: 40px;
+  background-size: cover;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -24,10 +22,31 @@
   background-color: transparent;
   border: 0;
   display: block;
-  min-height: 32px;
-  min-width: 32px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   right: -40px;
   top: -40px;
   transition: all 0.5s linear;
+}
+
+@media (max-width: 501px) {
+  .modalWindow {
+    width: 80vw;
+    height: 80vw;
+  }
+  .closeIcon {
+    right: -20px;
+    top: -20px;
+    max-height: 16px;
+    max-width: 16px;
+  }
+}
+
+@media (max-width: 201px) {
+  .closeIcon {
+    display: none;
+  }
 }
