@@ -1,26 +1,23 @@
 import React from 'react';
 import styles from './AuthorsBlock.module.css';
 
-function AuthorsBlock() {
+function AuthorsBlock(props) {
   return (
     <div className={styles.authorsBlock}>
       <div className={styles.container}>
-        <h2 className={styles.header}>What it was all about?</h2>
+        <h2 className={styles.header}>{props.text.authorsBlockHeader}</h2>
         <div className={styles.textBoxes}>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>Idea</h3>
-            <p className={styles.textBoxParagraph}>The project was produced by Strokov Victor and Alimkhanov
-              Tamerlan.</p>
+            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderLeft}</h3>
+            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphLeft}</p>
           </div>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>Tech</h3>
-            <p className={styles.textBoxParagraph}>Technical part as well as UX/UI design were produced by Hammerheart
-              studios.</p>
+            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderCenter}</h3>
+            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphCenter}</p>
           </div>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>30+ b2b clients</h3>
-            <p className={styles.textBoxParagraph}>Venivi had more than 30 b2b clients and organized 3 e-sports
-              tournaments with 300+ players </p>
+            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderRight}</h3>
+            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphRight}</p>
           </div>
         </div>
       </div>

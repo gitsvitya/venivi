@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ScreenshotsBlock.module.css';
 import Modal from '../Modal/Modal';
 
-function ScreenshotsBlock() {
+function ScreenshotsBlock(props) {
 
   const [ModalOpen, ModalOpened] = React.useState(false);
   const [ModalContent, SetModalContent] = React.useState('');
@@ -19,11 +19,17 @@ function ScreenshotsBlock() {
 
     if (input==='screenshotMain')
       return (
-        <div className={styles.screenshotMain}></div>
+        <>
+          <div className={styles.screenshotMain}></div>
+          <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigLeft}</figcaption>
+        </>
       );
     else
       return (
-        <div className={styles.screenshotCont}></div>
+        <>
+          <div className={styles.screenshotCont}></div>
+          <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigRight}</figcaption>
+        </>
       );
   };
 
@@ -31,15 +37,15 @@ function ScreenshotsBlock() {
     <>
     <div className={styles.screenshotsBlock}>
       <div className={styles.container}>
-        <h2 className={styles.header}>How it looked like?</h2>
+        <h2 className={styles.header}>{props.text.screenshotsBlockHeader}</h2>
         <div className={styles.screenshotsBox}>
           <figure className={styles.screenshotBox} onClick={()=>{openModal(); SetModalContent('screenshotMain')}}>
             <div className={styles.screenshotMain}></div>
-            <figcaption className={styles.screenshotFig}>Main page</figcaption>
+            <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigLeft}</figcaption>
           </figure>
           <figure className={styles.screenshotBox} onClick={()=>{openModal(); SetModalContent('screenshotCont')}}>
             <div className={styles.screenshotCont}></div>
-            <figcaption className={styles.screenshotFig}>Contest screen</figcaption>
+            <figcaption className={styles.screenshotFig}>{props.text.screenshotsBlockScreenshotFigRight}</figcaption>
           </figure>
         </div>
       </div>
