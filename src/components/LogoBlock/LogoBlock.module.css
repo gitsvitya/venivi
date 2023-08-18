@@ -1,7 +1,6 @@
 .logoBlock {
   background-color: #FFFFFF;
   width: 100%;
-  text-rendering: optimizeLegibility;
   transition: all 0.5s linear;
 }
 
@@ -14,7 +13,8 @@
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-
+  transition: all 0.5s linear;
+  text-rendering: optimizeLegibility;
 }
 
 .logo {
@@ -26,11 +26,13 @@
   max-height: 220px;
   max-width: 243.61px;
   align-self: center;
+  transition: all 0.5s linear;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
+  transition: all 0.5s linear;
 }
 
 .textVenivi {
@@ -41,6 +43,8 @@
   font-weight: 400;
   font-size: 80px;
   line-height: 110px;
+  transition: all 0.5s linear;
+  text-rendering: optimizeLegibility;
 }
 
 .textAbout {
@@ -51,6 +55,8 @@
   line-height: 28px;
   margin: 0 0 20px 0;
   padding: 0;
+  transition: all 0.5s linear;
+  text-rendering: optimizeLegibility;
 }
 
 .textLogo {
@@ -61,6 +67,8 @@
   line-height: 28px;
   padding: 0;
   margin: 0;
+  transition: all 0.5s linear;
+  text-rendering: optimizeLegibility;
 }
 
 @media (max-width: 941px) {

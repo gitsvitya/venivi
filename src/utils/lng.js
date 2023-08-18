@@ -4,7 +4,7 @@ export const rusLng = {
   logoBlockTextAbout: 'Конкурсная площадка «Veni, Vidi, Vici»',
   logoBlockTextLogo: 'Пришел, Увидел, Победил!',
 
-  aboutBlockHeader: 'О чем был venivi?',
+  aboutBlockHeader: 'О чем был Venivi?',
   aboutBlockTextBoxHeaderLeft: 'Когда был релиз?',
   aboutBlockTextBoxParagraphLeft: 'Venivi - конкурсная площадка, на которой рекламодатели проводили различные конкурсы и розыгрыши призов для взаимодействия с аудиторией. Релиз состоялся в 2013 году.',
   aboutBlockTextBoxHeaderCenter: 'Какие итоги?',

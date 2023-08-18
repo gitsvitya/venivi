@@ -1,7 +1,6 @@
 .header {
   background-color: #DF2626;
   width: 100%;
-  text-rendering: optimizeLegibility;
   transition: all 0.5s linear;
 }
 
@@ -14,6 +13,7 @@
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.5s linear;
 }
 
 .langButton {
@@ -29,6 +29,8 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
+  text-rendering: optimizeLegibility;
+  transition: all 0.5s linear;
 }
 
 .langButton:hover {
