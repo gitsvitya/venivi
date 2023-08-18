@@ -5,7 +5,7 @@ function AppHeader(props) {
 
   let nextLng = '';
 
-  if (props.Language == 'ru')
+  if (props.Language === 'ru')
     nextLng = 'en';
   else
     nextLng = 'ru';

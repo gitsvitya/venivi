@@ -14,7 +14,7 @@ function App() {
 
   let currentText = engLng;
 
-  if (Language == 'en')
+  if (Language === 'en')
     currentText = engLng;
   else
     currentText = rusLng;
