@@ -122,7 +122,7 @@
 
 @media (max-width: 501px) {
   .container {
-    padding: 40px 20px 20px 20px;
+    padding: 20px;
   }
   .header {
     font-size: 28px;
@@ -131,7 +131,7 @@
   .screenshotsBox {
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
   }
   .screenshotFigModal {
     font-size: 14px;

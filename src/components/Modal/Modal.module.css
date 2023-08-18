@@ -12,8 +12,7 @@
   right: 0;
   margin: auto;
   z-index: 3;
-  text-rendering: optimizeLegibility;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 
 .closeIcon {
