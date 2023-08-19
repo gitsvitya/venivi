@@ -103,9 +103,11 @@
   .container {
     padding: 30px;
   }
+
   .screenshotsBox {
     gap: 5px;
   }
+
   .screenshotFigModal {
     margin-top: 5px;
     font-size: 16px;
@@ -124,15 +126,18 @@
   .container {
     padding: 20px;
   }
+
   .header {
     font-size: 28px;
     line-height: 32px;
   }
+
   .screenshotsBox {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
   }
+
   .screenshotFigModal {
     font-size: 14px;
   }

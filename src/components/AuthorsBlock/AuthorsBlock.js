@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './AuthorsBlock.module.css';
+import React from "react";
+import styles from "./AuthorsBlock.module.css";
 
 function AuthorsBlock(props) {
   return (
@@ -8,16 +8,28 @@ function AuthorsBlock(props) {
         <h2 className={styles.header}>{props.text.authorsBlockHeader}</h2>
         <div className={styles.textBoxes}>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderLeft}</h3>
-            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphLeft}</p>
+            <h3 className={styles.textBoxHeader}>
+              {props.text.authorBlockTextBoxHeaderLeft}
+            </h3>
+            <p className={styles.textBoxParagraph}>
+              {props.text.authorBlockTextBoxParagraphLeft}
+            </p>
           </div>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderCenter}</h3>
-            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphCenter}</p>
+            <h3 className={styles.textBoxHeader}>
+              {props.text.authorBlockTextBoxHeaderCenter}
+            </h3>
+            <p className={styles.textBoxParagraph}>
+              {props.text.authorBlockTextBoxParagraphCenter}
+            </p>
           </div>
           <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>{props.text.authorBlockTextBoxHeaderRight}</h3>
-            <p className={styles.textBoxParagraph}>{props.text.authorBlockTextBoxParagraphRight}</p>
+            <h3 className={styles.textBoxHeader}>
+              {props.text.authorBlockTextBoxHeaderRight}
+            </h3>
+            <p className={styles.textBoxParagraph}>
+              {props.text.authorBlockTextBoxParagraphRight}
+            </p>
           </div>
         </div>
       </div>
@@ -25,4 +37,4 @@ function AuthorsBlock(props) {
   );
 }
 
-export default AuthorsBlock
+export default AuthorsBlock;

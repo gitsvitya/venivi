@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './LogoBlock.module.css';
+import React from "react";
+import styles from "./LogoBlock.module.css";
 
 function LogoBlock(props) {
   return (

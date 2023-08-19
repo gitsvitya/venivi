@@ -95,21 +95,25 @@
   .container {
     padding: 30px;
   }
+
   .header {
     font-size: 30px;
     line-height: 35px;
     margin-bottom: 30px;
   }
+
   .textBoxHeader {
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 15px;
     text-align: center;
   }
+
   .textBoxParagraph {
     font-size: 16px;
     line-height: 19px;
   }
+
   .textBoxListItem {
     font-size: 16px;
     line-height: 19px;
@@ -120,17 +124,21 @@
   .container {
     padding: 20px;
   }
+
   .header {
     font-size: 28px;
     line-height: 32px;
 
   }
+
   .textBoxes {
     flex-direction: column;
   }
+
   .textBoxHeader {
     margin-bottom: 10px;
   }
+
   .textBoxParagraph {
     padding: 0;
     box-sizing: border-box;
@@ -138,6 +146,7 @@
     font-size: 14px;
     line-height: 18px;
   }
+
   .textBoxListItem {
     font-weight: 400;
     font-size: 14px;

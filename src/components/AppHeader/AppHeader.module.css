@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 30px;
+  padding: 30px 50px 30px 50px;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -41,6 +41,7 @@
   .resCon {
     margin-left: 0;
     margin-right: 0;
+    padding: 30px;
   }
 
   .langButton {
@@ -52,6 +53,7 @@
   .resCon {
     padding: 20px;
   }
+
   .langButton {
     max-width: 50px;
     font-size: 18px;
