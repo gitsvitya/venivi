@@ -54,6 +54,7 @@
 
 .link:hover {
   text-decoration: underline;
+  transition: all 0.5s linear;
 }
 
 @media (max-width: 769px) {
