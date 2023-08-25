@@ -33,6 +33,10 @@
   transition: all 0.5s linear;
 }
 
+.closeIcon:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 501px) {
   .modalWindow {
     width: 80vw;
