@@ -9,7 +9,7 @@ import AppFooter from "../AppFooter/AppFooter";
 import { rusLng, engLng } from "../../utils/lng";
 
 function App() {
-  const [Language, ChangeLanguage] = React.useState("en");
+  const [Language, ChangeLanguage] = React.useState("ru");
 
   let currentText = engLng;
 
