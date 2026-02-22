@@ -9,16 +9,19 @@ const Modal = ({ children, closeModal }) => {
 
   React.useEffect(() => {
     const prevFocusedElement = document.activeElement;
+    const prevBodyOverflow = document.body.style.overflow;
 
     function closeModalByEsc(evt) {
       evt.key === "Escape" && closeModal();
     }
 
     document.addEventListener("keydown", closeModalByEsc);
+    document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
 
     return () => {
       document.removeEventListener("keydown", closeModalByEsc);
+      document.body.style.overflow = prevBodyOverflow;
       if (prevFocusedElement instanceof HTMLElement) {
         prevFocusedElement.focus();
       }
