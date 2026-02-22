@@ -11,6 +11,7 @@ function AppHeader(props) {
     <header className={styles.header}>
       <div className={styles.resCon}>
         <button
+          type="button"
           className={styles.langButton}
           onClick={() => {
             props.ChangeLanguage(`${nextLng}`);

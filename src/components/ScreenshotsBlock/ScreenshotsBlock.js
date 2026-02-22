@@ -3,34 +3,38 @@ import styles from "./ScreenshotsBlock.module.css";
 import Modal from "../Modal/Modal";
 
 function ScreenshotsBlock(props) {
-  const [ModalOpen, ModalOpened] = React.useState(false);
-  const [ModalContent, SetModalContent] = React.useState("");
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [modalContent, setModalContent] = React.useState("");
 
   function openModal() {
-    ModalOpened(true);
+    setIsModalOpen(true);
   }
 
   function closeModal() {
-    ModalOpened(false);
+    setIsModalOpen(false);
   }
 
   function renderModalContent(input) {
     if (input === "screenshotMain")
       return (
         <>
-          <div className={styles.screenshotMain}></div>
-          <figcaption className={styles.screenshotFigModal}>
+          <div
+            className={`${styles.screenshotMain} ${styles.screenshotModalImage}`}
+          ></div>
+          <p className={styles.screenshotFigModal}>
             {props.text.screenshotsBlockScreenshotFigLeft}
-          </figcaption>
+          </p>
         </>
       );
     else
       return (
         <>
-          <div className={styles.screenshotCont}></div>
-          <figcaption className={styles.screenshotFigModal}>
+          <div
+            className={`${styles.screenshotCont} ${styles.screenshotModalImage}`}
+          ></div>
+          <p className={styles.screenshotFigModal}>
             {props.text.screenshotsBlockScreenshotFigRight}
-          </figcaption>
+          </p>
         </>
       );
   }
@@ -41,36 +45,40 @@ function ScreenshotsBlock(props) {
         <div className={styles.container}>
           <h2 className={styles.header}>{props.text.screenshotsBlockHeader}</h2>
           <div className={styles.screenshotsBox}>
-            <figure
+            <button
+              type="button"
               className={styles.screenshotBox}
+              aria-label={props.text.screenshotsBlockScreenshotFigLeft}
               onClick={() => {
                 openModal();
-                SetModalContent("screenshotMain");
+                setModalContent("screenshotMain");
               }}
             >
               <div className={styles.screenshotMain}></div>
-              <figcaption className={styles.screenshotFig}>
+              <span className={styles.screenshotFig}>
                 {props.text.screenshotsBlockScreenshotFigLeft}
-              </figcaption>
-            </figure>
-            <figure
+              </span>
+            </button>
+            <button
+              type="button"
               className={styles.screenshotBox}
+              aria-label={props.text.screenshotsBlockScreenshotFigRight}
               onClick={() => {
                 openModal();
-                SetModalContent("screenshotCont");
+                setModalContent("screenshotCont");
               }}
             >
               <div className={styles.screenshotCont}></div>
-              <figcaption className={styles.screenshotFig}>
+              <span className={styles.screenshotFig}>
                 {props.text.screenshotsBlockScreenshotFigRight}
-              </figcaption>
-            </figure>
+              </span>
+            </button>
           </div>
         </div>
       </div>
-      {ModalOpen && (
+      {isModalOpen && (
         <Modal closeModal={closeModal}>
-          {renderModalContent(ModalContent)}
+          {renderModalContent(modalContent)}
         </Modal>
       )}
     </>

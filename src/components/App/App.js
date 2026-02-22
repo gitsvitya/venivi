@@ -9,19 +9,19 @@ import AppFooter from "../AppFooter/AppFooter";
 import { rusLng, engLng } from "../../utils/lng";
 
 function App() {
-  const [Language, ChangeLanguage] = React.useState("ru");
+  const [language, setLanguage] = React.useState("ru");
 
   let currentText = engLng;
 
-  if (Language === "en") currentText = engLng;
+  if (language === "en") currentText = engLng;
   else currentText = rusLng;
 
   return (
     <div className={styles.page}>
       <AppHeader
         text={currentText}
-        ChangeLanguage={ChangeLanguage}
-        Language={Language}
+        ChangeLanguage={setLanguage}
+        Language={language}
       />
       <main className={styles.main}>
         <LogoBlock text={currentText} />

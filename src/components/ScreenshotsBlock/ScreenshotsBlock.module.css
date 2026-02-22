@@ -47,6 +47,10 @@
   margin: 0;
   cursor: pointer;
   transition: all 0.5s linear;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
 }
 
 .screenshotMain {
@@ -93,6 +97,16 @@
   text-rendering: optimizeLegibility;
 }
 
+.screenshotModalImage {
+  background-size: contain;
+  background-position: center center;
+  width: auto;
+  height: 80vh;
+  aspect-ratio: 1056 / 1023;
+  align-self: center;
+  max-width: 100%;
+}
+
 @media (max-width: 950px) {
   .screenshotsBox {
     gap: 70px;
@@ -123,6 +137,10 @@
 }
 
 @media (max-width: 501px) {
+  .screenshotModalImage {
+    height: 70vh;
+  }
+
   .container {
     padding: 20px;
   }
