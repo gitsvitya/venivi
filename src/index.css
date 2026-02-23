@@ -1,7 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-ink: #101114;
+  --color-ink-soft: #2a2d33;
+  --color-bg: #f5f2e8;
+  --color-surface: #fffdf6;
+  --color-brand-red: #cf2a22;
+  --color-brand-yellow: #f6c40e;
+  --color-on-dark: #ffffff;
+  --color-border: rgba(16, 17, 20, 0.12);
+  --shadow-soft: 0 10px 30px rgba(16, 17, 20, 0.08);
+  --shadow-strong: 0 24px 48px rgba(0, 0, 0, 0.28);
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --focus-ring: 0 0 0 3px rgba(246, 196, 14, 0.55);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(246, 196, 14, 0.12), transparent 38%),
+    radial-gradient(circle at 90% 10%, rgba(207, 42, 34, 0.08), transparent 32%),
+    var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 10px;
+}
+
+::selection {
+  background: rgba(246, 196, 14, 0.45);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 @font-face {

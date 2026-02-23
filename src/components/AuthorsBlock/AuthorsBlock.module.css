@@ -1,6 +1,7 @@
 .authorsBlock {
   width: 100%;
-  background-color: #FFFFFF;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f7f4eb 100%);
   transition: all 0.5s linear;
 }
 
@@ -9,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  padding: 56px 50px;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -19,9 +20,9 @@
 .header {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 42px;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
   padding: 0;
   margin: 0 0 50px 0;
   text-align: center;
@@ -30,29 +31,33 @@
 }
 
 .textBoxes {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
-  justify-content: space-between;
-  gap: 30px;
+  align-items: start;
+  gap: 24px;
   transition: all 0.5s linear;
 }
 
 .textBox {
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(16, 17, 20, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(16, 17, 20, 0.06);
   transition: all 0.5s linear;
 }
 
 .textBoxHeader {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
   padding: 0;
   margin: 0 0 20px 0;
   transition: all 0.5s linear;
@@ -63,11 +68,12 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 17px;
+  line-height: 1.6;
   padding: 0;
   margin: 0;
-  text-align: justify;
+  text-align: left;
+  color: #20242b;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
@@ -78,21 +84,23 @@
   }
 
   .header {
-    font-size: 30px;
-    line-height: 35px;
     margin-bottom: 30px;
+  }
+
+  .textBoxes {
+    gap: 16px;
   }
 
   .textBoxHeader {
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: left;
   }
 
   .textBoxParagraph {
     font-size: 16px;
-    line-height: 19px;
+    line-height: 1.5;
   }
 }
 
@@ -107,7 +115,7 @@
   }
 
   .textBoxes {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .textBoxHeader {
@@ -119,6 +127,6 @@
     box-sizing: border-box;
     font-weight: 400;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.5;
   }
 }

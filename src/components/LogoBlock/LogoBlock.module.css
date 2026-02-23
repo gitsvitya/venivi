@@ -1,5 +1,6 @@
 .logoBlock {
-  background-color: #FFFFFF;
+  background:
+    linear-gradient(180deg, #fffdf7 0%, #fff7df 100%);
   width: 100%;
   transition: all 0.5s linear;
 }
@@ -8,8 +9,9 @@
   max-width: 1440px;
   display: flex;
   flex-direction: row;
-  padding: 50px;
-  gap: 200px;
+  align-items: center;
+  padding: 56px 50px;
+  gap: clamp(40px, 8vw, 140px);
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -21,28 +23,31 @@
   background-image: url('../../images/veniviLogo.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 100vw;
-  height: 100vh;
-  max-height: 220px;
-  max-width: 243.61px;
+  width: min(244px, 28vw);
+  aspect-ratio: 243.61 / 220;
+  height: auto;
   align-self: center;
   transition: all 0.5s linear;
+  flex-shrink: 0;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
+  max-width: 780px;
   transition: all 0.5s linear;
 }
 
 .textVenivi {
   font-family: 'Roboto', sans-serif;
-  margin: 0 0 50px 0;
+  margin: 0 0 20px 0;
   padding: 0;
   font-style: normal;
   font-weight: 400;
-  font-size: 80px;
-  line-height: 110px;
+  font-size: clamp(44px, 7vw, 76px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
@@ -51,8 +56,8 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.35;
   margin: 0 0 20px 0;
   padding: 0;
   transition: all 0.5s linear;
@@ -63,17 +68,18 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.35;
   padding: 0;
   margin: 0;
+  color: #393c43;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
 @media (max-width: 941px) {
   .container {
-    gap: 100px;
+    gap: 70px;
   }
 }
 
@@ -82,17 +88,14 @@
   .container {
     justify-content: space-between;
     padding: 30px;
-    gap: 50px;
+    gap: 30px;
   }
 
   .logo {
-    max-height: 150px;
-    max-width: 179.45px;
+    width: min(180px, 28vw);
   }
 
   .textVenivi {
-    font-size: 46px;
-    line-height: 54px;
     margin-bottom: 30px;
   }
 
@@ -113,7 +116,7 @@
 @media (max-width: 501px) {
   .container {
     padding: 20px;
-    gap: 0;
+    gap: 18px;
     flex-direction: column;
   }
 
@@ -122,28 +125,21 @@
   }
 
   .logo {
-    max-height: 276px;
-    max-width: 300px;
+    width: min(220px, 64vw);
   }
 
   .textVenivi {
-    font-size: 44px;
-    line-height: 52px;
     margin-bottom: 15px;
     text-align: center;
   }
 
   .textAbout {
     margin-bottom: 10px;
-    font-size: 22px;
-    line-height: 26px;
     max-width: 350px;
     text-align: center;
   }
 
   .textLogo {
-    font-size: 22px;
-    line-height: 26px;
     max-width: 350px;
     text-align: center;
   }

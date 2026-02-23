@@ -3,7 +3,7 @@ import styles from "./LogoBlock.module.css";
 
 function LogoBlock(props) {
   return (
-    <div className={styles.LogoBlock}>
+    <div className={styles.logoBlock}>
       <div className={styles.container}>
         <div className={styles.logo}></div>
         <div className={styles.textContainer}>

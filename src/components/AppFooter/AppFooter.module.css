@@ -1,12 +1,13 @@
 .appFooter {
-  background-color: #DF2626;
+  background:
+    linear-gradient(180deg, #c92424 0%, #a91c1c 100%);
   width: 100%;
   transition: all 0.5s linear;
 }
 
 .container {
   max-width: 1440px;
-  padding: 30px 50px 30px 50px;
+  padding: 28px 50px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -35,6 +36,7 @@
   color: #FFFFFF;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
+  opacity: 0.92;
 }
 
 .link {
@@ -50,11 +52,17 @@
   cursor: pointer;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom-color: rgba(255, 255, 255, 0.95);
   transition: all 0.5s linear;
+}
+
+.link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.55);
+  border-radius: 6px;
 }
 
 @media (max-width: 769px) {
@@ -66,6 +74,11 @@
 @media (max-width: 501px) {
   .container {
     padding: 20px;
+  }
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   .paragraph {
     font-size: 16px;

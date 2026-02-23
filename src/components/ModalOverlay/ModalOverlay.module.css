@@ -1,11 +1,13 @@
 .modalOverlay {
   display: flex;
-  background-color: #000000;
-  opacity: 0.6;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 206, 0, 0.08), transparent 50%),
+    rgba(0, 0, 0, 0.72);
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
+  backdrop-filter: blur(2px);
 }
