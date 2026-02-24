@@ -29,9 +29,6 @@ function AboutBlock(props) {
               <li className={styles.textBoxListItem}>
                 {props.text.aboutBlockLestItemThree}
               </li>
-              <li className={styles.textBoxListItem}>
-                {props.text.aboutBlockLestItemFour}
-              </li>
             </ul>
           </div>
           <div className={styles.textBox}>
