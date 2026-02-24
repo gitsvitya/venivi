@@ -100,6 +100,12 @@
   text-rendering: optimizeLegibility;
 }
 
+@media (max-width: 1000px) {
+  .textBoxes {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 769px) {
   .container {
     padding: 30px;
@@ -121,7 +127,7 @@
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 15px;
-    text-align: left;
+    /* text-align: left; */
   }
 
   .textBoxParagraph {
@@ -144,10 +150,6 @@
     font-size: 28px;
     line-height: 32px;
 
-  }
-
-  .textBoxes {
-    grid-template-columns: 1fr;
   }
 
   .textBox {
