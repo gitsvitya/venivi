@@ -94,15 +94,9 @@
   }
 
   .closeIcon {
-    right: 6px;
-    top: 6px;
+    right: 20px;
+    top: 20px;
     height: 16px;
     width: 16px;
-  }
-}
-
-@media (max-width: 201px) {
-  .closeIcon {
-    display: none;
   }
 }
