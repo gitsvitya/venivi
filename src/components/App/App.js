@@ -16,6 +16,10 @@ function App() {
   if (language === "en") currentText = engLng;
   else currentText = rusLng;
 
+  React.useEffect(() => {
+    document.title = currentText.pageTitle;
+  }, [currentText]);
+
   return (
     <div className={styles.page}>
       <AppHeader

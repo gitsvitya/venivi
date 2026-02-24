@@ -1,4 +1,5 @@
 export const rusLng = {
+  pageTitle: 'Конкурсная платформа «Veni, Vidi, Vici»',
   appHeaderLangButton: 'En',
 
   logoBlockTextAbout: 'Конкурсная платформа «Veni, Vidi, Vici»',
@@ -28,6 +29,7 @@ export const rusLng = {
 };
 
 export const engLng = {
+  pageTitle: 'Giveaway platform «Veni, Vidi, Vici»',
   appHeaderLangButton: 'Ru',
 
   logoBlockTextAbout: 'Giveaway platform «Veni, Vidi, Vici»',
