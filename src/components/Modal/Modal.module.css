@@ -35,14 +35,14 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: transparent;
+  border: none;
   display: block;
   height: 32px;
   width: 32px;
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 22px;
+  top: 22px;
   transition: all 0.5s linear;
   padding: 0;
   z-index: 1;
