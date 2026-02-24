@@ -8,8 +8,12 @@ import AuthorsBlock from "../AuthorsBlock/AuthorsBlock";
 import AppFooter from "../AppFooter/AppFooter";
 import { rusLng, engLng } from "../../utils/lng";
 
+const LANGUAGE_SWITCH_FADE_MS = 320;
+
 function App() {
   const [language, setLanguage] = React.useState("ru");
+  const [isLanguageFadingOut, setIsLanguageFadingOut] = React.useState(false);
+  const languageTransitionTimeoutRef = React.useRef(null);
 
   let currentText = engLng;
 
@@ -20,20 +24,53 @@ function App() {
     document.title = currentText.pageTitle;
   }, [currentText]);
 
+  React.useEffect(() => {
+    return () => {
+      if (languageTransitionTimeoutRef.current) {
+        clearTimeout(languageTransitionTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  function handleLanguageChange(nextLanguage) {
+    if (nextLanguage === language || isLanguageFadingOut) {
+      return;
+    }
+
+    setIsLanguageFadingOut(true);
+
+    if (languageTransitionTimeoutRef.current) {
+      clearTimeout(languageTransitionTimeoutRef.current);
+    }
+
+    languageTransitionTimeoutRef.current = setTimeout(() => {
+      setLanguage(nextLanguage);
+      setIsLanguageFadingOut(false);
+      languageTransitionTimeoutRef.current = null;
+    }, LANGUAGE_SWITCH_FADE_MS);
+  }
+
   return (
     <div className={styles.page}>
-      <AppHeader
-        text={currentText}
-        ChangeLanguage={setLanguage}
-        Language={language}
-      />
-      <main className={styles.main}>
-        <LogoBlock text={currentText} />
-        <AboutBlock text={currentText} />
-        <ScreenshotsBlock text={currentText} />
-        <AuthorsBlock text={currentText} />
-      </main>
-      <AppFooter />
+      <div
+        key={language}
+        className={`${styles.localizedContent} ${
+          isLanguageFadingOut ? styles.localizedContentFadingOut : ""
+        }`}
+      >
+        <AppHeader
+          text={currentText}
+          ChangeLanguage={handleLanguageChange}
+          Language={language}
+        />
+        <main className={styles.main}>
+          <LogoBlock text={currentText} />
+          <AboutBlock text={currentText} />
+          <ScreenshotsBlock text={currentText} />
+          <AuthorsBlock text={currentText} />
+        </main>
+        <AppFooter />
+      </div>
     </div>
   );
 }

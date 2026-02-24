@@ -23,12 +23,18 @@ test("renders default russian content", () => {
 });
 
 test("switches language", () => {
+  jest.useFakeTimers();
   render(<App />);
 
   fireEvent.click(screen.getByRole("button", { name: "En" }));
 
+  act(() => {
+    jest.advanceTimersByTime(350);
+  });
+
   expect(screen.getByText(/What was this project\?/i)).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Ru" })).toBeInTheDocument();
+  jest.useRealTimers();
 });
 
 test("opens and closes screenshots modal", () => {
