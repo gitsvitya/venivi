@@ -34,7 +34,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
-  align-items: start;
+  align-items: stretch;
   gap: 24px;
   transition: all 0.5s linear;
 }
@@ -60,6 +60,7 @@
   line-height: 1.2;
   padding: 0;
   margin: 0 0 20px 0;
+  width: 100%;
   transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
@@ -71,7 +72,8 @@
   font-size: 17px;
   line-height: 1.6;
   padding: 0;
-  margin: 0;
+  margin: auto 0;
+  width: 100%;
   text-align: left;
   color: #1f2329;
   transition: all 0.5s linear;
@@ -81,7 +83,8 @@
 .textBoxListItems {
   list-style: disc;
   padding-left: 20px;
-  margin: 0;
+  margin: auto 0;
+  width: 100%;
   transition: all 0.5s linear;
 }
 
@@ -108,6 +111,10 @@
 
   .textBoxes {
     gap: 16px;
+  }
+
+  .textBox {
+    padding: 20px;
   }
 
   .textBoxHeader {
@@ -141,6 +148,10 @@
 
   .textBoxes {
     grid-template-columns: 1fr;
+  }
+
+  .textBox {
+    padding: 18px;
   }
 
   .textBoxHeader {
