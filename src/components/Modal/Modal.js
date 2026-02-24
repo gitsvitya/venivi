@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import styles from "./Modal.module.css";
 
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, closeModal, isClosing = false }) => {
   const container = document.querySelector("#modal");
   const closeButtonRef = React.useRef(null);
 
@@ -34,7 +34,13 @@ const Modal = ({ children, closeModal }) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className={styles.modalWindow} role="dialog" aria-modal="true">
+      <div
+        className={`${styles.modalWindow} ${
+          isClosing ? styles.modalWindowClosing : ""
+        }`}
+        role="dialog"
+        aria-modal="true"
+      >
         <button
           ref={closeButtonRef}
           type="button"
@@ -44,7 +50,7 @@ const Modal = ({ children, closeModal }) => {
         />
         {children}
       </div>
-      <ModalOverlay onClick={closeModal} />
+      <ModalOverlay onClick={closeModal} isClosing={isClosing} />
     </>,
     container
   );

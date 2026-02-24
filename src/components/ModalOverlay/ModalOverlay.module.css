@@ -10,4 +10,24 @@
   left: 0;
   z-index: 1;
   backdrop-filter: blur(2px);
+  opacity: 1;
+  transition: opacity 220ms ease, backdrop-filter 220ms ease;
+  animation: overlayEnter 220ms ease;
+}
+
+.modalOverlayClosing {
+  opacity: 0;
+  backdrop-filter: blur(0);
+}
+
+@keyframes overlayEnter {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+  }
 }

@@ -4,14 +4,38 @@ import Modal from "../Modal/Modal";
 
 function ScreenshotsBlock(props) {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalClosing, setIsModalClosing] = React.useState(false);
   const [modalContent, setModalContent] = React.useState("");
+  const closeTimeoutRef = React.useRef(null);
+
+  React.useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   function openModal() {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsModalClosing(false);
     setIsModalOpen(true);
   }
 
   function closeModal() {
-    setIsModalOpen(false);
+    if (isModalClosing) {
+      return;
+    }
+
+    setIsModalClosing(true);
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsModalOpen(false);
+      setIsModalClosing(false);
+      closeTimeoutRef.current = null;
+    }, 220);
   }
 
   function renderModalContent(input) {
@@ -77,7 +101,7 @@ function ScreenshotsBlock(props) {
         </div>
       </div>
       {isModalOpen && (
-        <Modal closeModal={closeModal}>
+        <Modal closeModal={closeModal} isClosing={isModalClosing}>
           {renderModalContent(modalContent)}
         </Modal>
       )}
