@@ -191,13 +191,11 @@
     gap: 20px;
   }
 
-  .screenshotFigModal {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 321px) {
   .screenshotBox {
     width: min(200px, 100%);
+  }
+
+  .screenshotFigModal {
+    font-size: 14px;
   }
 }
