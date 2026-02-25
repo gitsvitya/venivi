@@ -1,29 +1,73 @@
-# Venivi.ru webpage
+# Venivi.ru
 
-[Venivi](https://venivi.ru/) was a task platform for giveaways where advertisers could interact with users by various prize drawings and quizzes.
+Landing/archive page for the historical project **“Veni, Vidi, Vici”** (Venivi.ru): a giveaway platform where advertisers ran contests and prize draws to attract and retain audiences.
 
-This project uses [Vite](https://vitejs.dev/) + React.
+The website presents:
+- project overview
+- key results
+- team/authors
+- archived platform screenshots
 
+## Tech Stack
 
-## Available Scripts
+- `React 18`
+- `Vite 5`
+- CSS Modules
 
-In the project directory, you can run:
+## Getting Started
+
+### Prerequisites
+
+- `Node.js >= 18.18.0` (see `.nvmrc`)
+- `npm`
+
+### Install
+
+```bash
+npm install
+```
+
+## Scripts
 
 ### `npm run dev`
 
-Runs the app in development mode.\
-Open the local URL shown by Vite (usually [http://localhost:5173](http://localhost:5173)).
-
-The page will reload when you make changes.
+Starts the Vite development server (usually at `http://localhost:5173`).
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.\
-It bundles React in production mode and optimizes the build for performance.
-
-The build is minified and the filenames include hashes.\
-Your app is ready to be deployed.
+Builds the project for production into the `dist/` folder.
 
 ### `npm run preview`
 
-Serves the production build locally for a final check before deployment.
+Runs a local preview of the production build.
+
+## Project Structure
+
+```text
+src/
+  components/      # UI sections and modal components
+  constants/       # Shared UI timing constants
+  images/          # Local image assets
+  fonts/           # Local font files
+  utils/lng.js     # RU/EN texts and SEO metadata
+public/
+  robots.txt
+  sitemap.xml
+```
+
+## Features
+
+- RU / EN language switch with animated transition
+- Accessible modal (keyboard support, focus trap, ESC close)
+- SEO basics:
+  - dynamic page title and meta updates by language
+  - Open Graph / Twitter meta
+  - JSON-LD (`AboutPage`)
+  - `robots.txt` and `sitemap.xml`
+- Vite-based production build
+
+## Author
+
+**Victor Strokov**
+
+- Website: [svitya.com](https://svitya.com/)

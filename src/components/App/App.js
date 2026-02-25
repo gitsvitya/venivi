@@ -22,6 +22,63 @@ function App() {
   React.useEffect(() => {
     document.title = currentText.pageTitle;
     document.documentElement.lang = language === "en" ? "en" : "ru";
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]'
+    );
+    const schemaScript = document.getElementById("seo-schema");
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", currentText.pageMetaDescription);
+    }
+
+    if (ogTitle) {
+      ogTitle.setAttribute("content", currentText.pageOgTitle);
+    }
+
+    if (ogDescription) {
+      ogDescription.setAttribute("content", currentText.pageOgDescription);
+    }
+
+    if (ogLocale) {
+      ogLocale.setAttribute("content", currentText.pageOgLocale);
+    }
+
+    if (twitterTitle) {
+      twitterTitle.setAttribute("content", currentText.pageTwitterTitle);
+    }
+
+    if (twitterDescription) {
+      twitterDescription.setAttribute(
+        "content",
+        currentText.pageTwitterDescription
+      );
+    }
+
+    if (schemaScript) {
+      schemaScript.textContent = JSON.stringify(
+        {
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "Venivi.ru",
+          url: "https://venivi.ru/",
+          inLanguage: currentText.pageSchemaLanguage,
+          description: currentText.pageSchemaDescription,
+          mainEntity: {
+            "@type": "Organization",
+            name: "Venivi.ru",
+            url: "https://venivi.ru/",
+          },
+        },
+        null,
+        2
+      );
+    }
   }, [currentText, language]);
 
   React.useEffect(() => {
