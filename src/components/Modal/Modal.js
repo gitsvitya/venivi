@@ -3,16 +3,68 @@ import ReactDOM from "react-dom";
 import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import styles from "./Modal.module.css";
 
-const Modal = ({ children, closeModal, isClosing = false }) => {
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+const Modal = ({
+  children,
+  closeModal,
+  isClosing = false,
+  transitionMs = 220,
+}) => {
   const container = document.querySelector("#modal");
+  const modalWindowRef = React.useRef(null);
   const closeButtonRef = React.useRef(null);
+  const closeModalRef = React.useRef(closeModal);
+
+  React.useEffect(() => {
+    closeModalRef.current = closeModal;
+  }, [closeModal]);
 
   React.useEffect(() => {
     const prevFocusedElement = document.activeElement;
     const prevBodyOverflow = document.body.style.overflow;
 
     function closeModalByEsc(evt) {
-      evt.key === "Escape" && closeModal();
+      if (evt.key === "Escape") {
+        closeModalRef.current();
+        return;
+      }
+
+      if (evt.key !== "Tab") {
+        return;
+      }
+
+      const modalElement = modalWindowRef.current;
+      if (!modalElement) {
+        return;
+      }
+
+      const focusableElements = Array.from(
+        modalElement.querySelectorAll(FOCUSABLE_SELECTOR)
+      ).filter((element) => {
+        if (!(element instanceof HTMLElement)) {
+          return false;
+        }
+        return !element.hasAttribute("disabled");
+      });
+
+      if (focusableElements.length === 0) {
+        evt.preventDefault();
+        modalElement.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (evt.shiftKey && document.activeElement === firstElement) {
+        evt.preventDefault();
+        lastElement.focus();
+      } else if (!evt.shiftKey && document.activeElement === lastElement) {
+        evt.preventDefault();
+        firstElement.focus();
+      }
     }
 
     document.addEventListener("keydown", closeModalByEsc);
@@ -26,7 +78,7 @@ const Modal = ({ children, closeModal, isClosing = false }) => {
         prevFocusedElement.focus();
       }
     };
-  }, [closeModal]);
+  }, []);
 
   if (!container) {
     return null;
@@ -35,11 +87,15 @@ const Modal = ({ children, closeModal, isClosing = false }) => {
   return ReactDOM.createPortal(
     <>
       <div
+        ref={modalWindowRef}
         className={`${styles.modalWindow} ${
           isClosing ? styles.modalWindowClosing : ""
         }`}
+        style={{ "--modal-transition-ms": `${transitionMs}ms` }}
         role="dialog"
         aria-modal="true"
+        aria-label="Просмотр скриншота"
+        tabIndex={-1}
       >
         <button
           ref={closeButtonRef}
@@ -50,7 +106,11 @@ const Modal = ({ children, closeModal, isClosing = false }) => {
         />
         {children}
       </div>
-      <ModalOverlay onClick={closeModal} isClosing={isClosing} />
+      <ModalOverlay
+        onClick={closeModal}
+        isClosing={isClosing}
+        transitionMs={transitionMs}
+      />
     </>,
     container
   );

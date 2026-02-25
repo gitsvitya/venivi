@@ -17,9 +17,9 @@
   transform: translateY(-50%) scale(1);
   z-index: 3;
   transition:
-    opacity 220ms ease,
-    transform 220ms ease,
-    box-shadow 220ms ease;
+    opacity var(--modal-transition-ms, 220ms) ease,
+    transform var(--modal-transition-ms, 220ms) ease,
+    box-shadow var(--modal-transition-ms, 220ms) ease;
   background: rgba(9, 10, 12, 0.76);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
@@ -27,7 +27,7 @@
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
   opacity: 1;
-  animation: modalEnter 220ms ease;
+  animation: modalEnter var(--modal-transition-ms, 220ms) ease;
 }
 
 .modalWindow > div {

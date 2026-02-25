@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ScreenshotsBlock.module.css";
 import Modal from "../Modal/Modal";
+import { MODAL_TRANSITION_MS } from "../../constants/ui";
 
 function ScreenshotsBlock(props) {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -35,7 +36,7 @@ function ScreenshotsBlock(props) {
       setIsModalOpen(false);
       setIsModalClosing(false);
       closeTimeoutRef.current = null;
-    }, 220);
+    }, MODAL_TRANSITION_MS);
   }
 
   function renderModalContent(input) {
@@ -101,7 +102,11 @@ function ScreenshotsBlock(props) {
         </div>
       </div>
       {isModalOpen && (
-        <Modal closeModal={closeModal} isClosing={isModalClosing}>
+        <Modal
+          closeModal={closeModal}
+          isClosing={isModalClosing}
+          transitionMs={MODAL_TRANSITION_MS}
+        >
           {renderModalContent(modalContent)}
         </Modal>
       )}

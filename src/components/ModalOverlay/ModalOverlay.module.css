@@ -11,8 +11,10 @@
   z-index: 1;
   backdrop-filter: blur(2px);
   opacity: 1;
-  transition: opacity 220ms ease, backdrop-filter 220ms ease;
-  animation: overlayEnter 220ms ease;
+  transition:
+    opacity var(--modal-transition-ms, 220ms) ease,
+    backdrop-filter var(--modal-transition-ms, 220ms) ease;
+  animation: overlayEnter var(--modal-transition-ms, 220ms) ease;
 }
 
 .modalOverlayClosing {

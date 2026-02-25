@@ -7,8 +7,7 @@ import ScreenshotsBlock from "../ScreenshotsBlock/ScreenshotsBlock";
 import AuthorsBlock from "../AuthorsBlock/AuthorsBlock";
 import AppFooter from "../AppFooter/AppFooter";
 import { rusLng, engLng } from "../../utils/lng";
-
-const LANGUAGE_SWITCH_FADE_MS = 320;
+import { LANGUAGE_SWITCH_FADE_MS } from "../../constants/ui";
 
 function App() {
   const [language, setLanguage] = React.useState("ru");
@@ -22,7 +21,8 @@ function App() {
 
   React.useEffect(() => {
     document.title = currentText.pageTitle;
-  }, [currentText]);
+    document.documentElement.lang = language === "en" ? "en" : "ru";
+  }, [currentText, language]);
 
   React.useEffect(() => {
     return () => {
@@ -51,9 +51,11 @@ function App() {
   }
 
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.page}
+      style={{ "--language-fade-ms": `${LANGUAGE_SWITCH_FADE_MS}ms` }}
+    >
       <div
-        key={language}
         className={`${styles.localizedContent} ${
           isLanguageFadingOut ? styles.localizedContentFadingOut : ""
         }`}

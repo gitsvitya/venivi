@@ -1,0 +1,2 @@
+export const LANGUAGE_SWITCH_FADE_MS = 320;
+export const MODAL_TRANSITION_MS = 220;

@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { act } from "react";
 import App from "./App";
+import { LANGUAGE_SWITCH_FADE_MS, MODAL_TRANSITION_MS } from "../../constants/ui";
 
 beforeEach(() => {
   const modalRoot = document.createElement("div");
@@ -9,6 +10,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  jest.useRealTimers();
   const modalRoot = document.getElementById("modal");
   if (modalRoot) {
     modalRoot.remove();
@@ -29,12 +31,11 @@ test("switches language", () => {
   fireEvent.click(screen.getByRole("button", { name: "En" }));
 
   act(() => {
-    jest.advanceTimersByTime(350);
+    jest.advanceTimersByTime(LANGUAGE_SWITCH_FADE_MS + 50);
   });
 
   expect(screen.getByText(/What was this project\?/i)).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Ru" })).toBeInTheDocument();
-  jest.useRealTimers();
 });
 
 test("opens and closes screenshots modal", () => {
@@ -48,9 +49,8 @@ test("opens and closes screenshots modal", () => {
   expect(screen.getByRole("dialog")).toBeInTheDocument();
 
   act(() => {
-    jest.advanceTimersByTime(250);
+    jest.advanceTimersByTime(MODAL_TRANSITION_MS + 50);
   });
 
   expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-  jest.useRealTimers();
 });
