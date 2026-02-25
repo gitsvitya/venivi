@@ -10,7 +10,12 @@ import { rusLng, engLng } from "../../utils/lng";
 import { LANGUAGE_SWITCH_FADE_MS } from "../../constants/ui";
 
 function App() {
-  const [language, setLanguage] = React.useState("ru");
+  const [language, setLanguage] = React.useState(() => {
+    const browserLanguage =
+      typeof navigator !== "undefined" ? navigator.language.toLowerCase() : "ru";
+
+    return browserLanguage.startsWith("ru") ? "ru" : "en";
+  });
   const [isLanguageFadingOut, setIsLanguageFadingOut] = React.useState(false);
   const languageTransitionTimeoutRef = React.useRef(null);
 
