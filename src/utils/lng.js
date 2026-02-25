@@ -12,6 +12,9 @@ export const rusLng = {
     'Архивная страница о конкурсной платформе «Veni, Vidi, Vici» с описанием проекта, результатов и скриншотами.',
   pageOgLocale: 'ru_RU',
   pageSchemaLanguage: 'ru',
+  cookieBannerText:
+    'Для корректной работы сайта используются технические и аналитические cookie-файлы. Продолжая работать с сайтом, Вы принимаете это.',
+  cookieBannerCloseButton: 'Закрыть',
   appHeaderLangButton: 'En',
 
   logoBlockTextAbout: 'Конкурсная платформа «Veni, Vidi, Vici»',
@@ -54,6 +57,9 @@ export const engLng = {
     'Archive page about the giveaway platform “Veni, Vidi, Vici” with project overview, outcomes and screenshots.',
   pageOgLocale: 'en_US',
   pageSchemaLanguage: 'en',
+  cookieBannerText:
+    'This website uses technical and analytical cookie files to function properly. By continuing to use the site, you agree to this.',
+  cookieBannerCloseButton: 'Close',
   appHeaderLangButton: 'Ru',
 
   logoBlockTextAbout: 'Giveaway platform «Veni, Vidi, Vici»',

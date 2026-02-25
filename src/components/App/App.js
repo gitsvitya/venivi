@@ -6,8 +6,11 @@ import AboutBlock from "../AboutBlock/AboutBlock";
 import ScreenshotsBlock from "../ScreenshotsBlock/ScreenshotsBlock";
 import AuthorsBlock from "../AuthorsBlock/AuthorsBlock";
 import AppFooter from "../AppFooter/AppFooter";
+import CookieBanner from "../CookieBanner/CookieBanner";
 import { rusLng, engLng } from "../../utils/lng";
 import { LANGUAGE_SWITCH_FADE_MS } from "../../constants/ui";
+
+const COOKIE_BANNER_STORAGE_KEY = "venivi-cookie-banner-dismissed";
 
 function App() {
   const [language, setLanguage] = React.useState(() => {
@@ -18,6 +21,17 @@ function App() {
   });
   const [isLanguageFadingOut, setIsLanguageFadingOut] = React.useState(false);
   const languageTransitionTimeoutRef = React.useRef(null);
+  const [isCookieBannerVisible, setIsCookieBannerVisible] = React.useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    try {
+      return window.localStorage.getItem(COOKIE_BANNER_STORAGE_KEY) !== "1";
+    } catch {
+      return true;
+    }
+  });
 
   let currentText = engLng;
 
@@ -112,6 +126,16 @@ function App() {
     }, LANGUAGE_SWITCH_FADE_MS);
   }
 
+  function closeCookieBanner() {
+    setIsCookieBannerVisible(false);
+
+    try {
+      window.localStorage.setItem(COOKIE_BANNER_STORAGE_KEY, "1");
+    } catch {
+      // Ignore storage errors (private mode / disabled storage).
+    }
+  }
+
   return (
     <div
       className={styles.page}
@@ -134,6 +158,13 @@ function App() {
           <AuthorsBlock text={currentText} />
         </main>
         <AppFooter />
+        {isCookieBannerVisible && (
+          <CookieBanner
+            text={currentText.cookieBannerText}
+            closeLabel={currentText.cookieBannerCloseButton}
+            onClose={closeCookieBanner}
+          />
+        )}
       </div>
     </div>
   );
