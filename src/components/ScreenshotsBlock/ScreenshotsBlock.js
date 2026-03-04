@@ -3,12 +3,20 @@ import styles from "./ScreenshotsBlock.module.css";
 import Modal from "../Modal/Modal";
 import { MODAL_TRANSITION_MS } from "../../constants/ui";
 
-function ScreenshotsBlock(props) {
+// Константы задают поддерживаемые типы скриншотов для модального окна.
+const SCREENSHOT_TYPES = {
+  main: "screenshotMain",
+  contest: "screenshotCont",
+};
+
+function ScreenshotsBlock({ text }) {
+  // Состояния управляют жизненным циклом модального окна и выбранным скриншотом.
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isModalClosing, setIsModalClosing] = React.useState(false);
   const [modalContent, setModalContent] = React.useState("");
   const closeTimeoutRef = React.useRef(null);
 
+  // Эффект очищает таймер закрытия модального окна при размонтировании компонента.
   React.useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) {
@@ -17,15 +25,18 @@ function ScreenshotsBlock(props) {
     };
   }, []);
 
+  // Обработчик открывает модальное окно и отменяет незавершенное закрытие.
   function openModal() {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
+
     setIsModalClosing(false);
     setIsModalOpen(true);
   }
 
+  // Обработчик запускает анимацию закрытия модального окна перед размонтированием.
   function closeModal() {
     if (isModalClosing) {
       return;
@@ -39,68 +50,73 @@ function ScreenshotsBlock(props) {
     }, MODAL_TRANSITION_MS);
   }
 
+  // Функция возвращает содержимое модального окна в зависимости от выбранного скриншота.
   function renderModalContent(input) {
-    if (input === "screenshotMain")
+    if (input === SCREENSHOT_TYPES.main) {
       return (
         <>
           <div
             className={`${styles.screenshotMain} ${styles.screenshotModalImage}`}
           ></div>
           <p className={styles.screenshotFigModal}>
-            {props.text.screenshotsBlockScreenshotFigLeft}
+            {text.screenshotsBlockScreenshotFigLeft}
           </p>
         </>
       );
-    else
-      return (
-        <>
-          <div
-            className={`${styles.screenshotCont} ${styles.screenshotModalImage}`}
-          ></div>
-          <p className={styles.screenshotFigModal}>
-            {props.text.screenshotsBlockScreenshotFigRight}
-          </p>
-        </>
-      );
+    }
+
+    return (
+      <>
+        <div
+          className={`${styles.screenshotCont} ${styles.screenshotModalImage}`}
+        ></div>
+        <p className={styles.screenshotFigModal}>
+          {text.screenshotsBlockScreenshotFigRight}
+        </p>
+      </>
+    );
   }
 
+  // Разметка рендерит превью скриншотов и модальное окно для увеличенного просмотра.
   return (
     <>
-      <div className={styles.screenshotsBlock}>
+      <section className={styles.screenshotsBlock} aria-labelledby="screenshots-title">
         <div className={styles.container}>
-          <h2 className={styles.header}>{props.text.screenshotsBlockHeader}</h2>
+          <h2 id="screenshots-title" className={styles.header}>
+            {text.screenshotsBlockHeader}
+          </h2>
           <div className={styles.screenshotsBox}>
             <button
               type="button"
               className={styles.screenshotBox}
-              aria-label={props.text.screenshotsBlockScreenshotFigLeft}
+              aria-label={text.screenshotsBlockScreenshotFigLeft}
               onClick={() => {
                 openModal();
-                setModalContent("screenshotMain");
+                setModalContent(SCREENSHOT_TYPES.main);
               }}
             >
               <div className={styles.screenshotMain}></div>
               <span className={styles.screenshotFig}>
-                {props.text.screenshotsBlockScreenshotFigLeft}
+                {text.screenshotsBlockScreenshotFigLeft}
               </span>
             </button>
             <button
               type="button"
               className={styles.screenshotBox}
-              aria-label={props.text.screenshotsBlockScreenshotFigRight}
+              aria-label={text.screenshotsBlockScreenshotFigRight}
               onClick={() => {
                 openModal();
-                setModalContent("screenshotCont");
+                setModalContent(SCREENSHOT_TYPES.contest);
               }}
             >
               <div className={styles.screenshotCont}></div>
               <span className={styles.screenshotFig}>
-                {props.text.screenshotsBlockScreenshotFigRight}
+                {text.screenshotsBlockScreenshotFigRight}
               </span>
             </button>
           </div>
         </div>
-      </div>
+      </section>
       {isModalOpen && (
         <Modal
           closeModal={closeModal}

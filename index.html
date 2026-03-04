@@ -7,11 +7,15 @@
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="light" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Базовые SEO-метаданные страницы, которые далее обновляются по выбранному языку. -->
     <meta
       name="description"
       content="Venivi.ru — конкурсная платформа «Veni, Vidi, Vici»: история проекта, результаты и архивные скриншоты."
     />
     <link rel="canonical" href="https://venivi.ru/" />
+
+    <!-- Метаданные Open Graph для превью в социальных сетях. -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -25,6 +29,8 @@
     <meta property="og:image" content="%BASE_URL%logo512.png" />
     <meta property="og:site_name" content="Venivi.ru" />
     <meta property="og:locale" content="ru_RU" />
+
+    <!-- Метаданные Twitter Card для корректного шаринга страницы. -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -36,8 +42,9 @@
     />
     <meta name="twitter:image" content="%BASE_URL%logo512.png" />
     <link rel="apple-touch-icon" href="%BASE_URL%logo192.png" />
-    <!-- <link rel="manifest" href="%BASE_URL%manifest.json" /> -->
     <title>Конкурсная платформа «Veni, Vidi, Vici»</title>
+
+    <!-- JSON-LD описывает страницу как архивную AboutPage для поисковых систем. -->
     <script id="seo-schema" type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,7 +60,8 @@
         }
       }
     </script>
-    <!-- Yandex.Metrika counter -->
+
+    <!-- Скрипт Яндекс.Метрики подключается только вне localhost для корректной локальной разработки. -->
     <script type="text/javascript">
       if (!["localhost", "127.0.0.1"].includes(window.location.hostname)) {
         (function (m, e, t, r, i, k, a) {
@@ -82,15 +90,27 @@
         });
       }
     </script>
-    <!-- /Yandex.Metrika counter -->
   </head>
   <body>
-    <!-- Yandex.Metrika counter -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/66242860" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <!-- Fallback-счетчик для Яндекс.Метрики при отключенном JavaScript. -->
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/66242860"
+          style="position:absolute; left:-9999px;"
+          alt=""
+        />
+      </div>
+    </noscript>
+
+    <!-- Сообщение для пользователей с полностью отключенным JavaScript. -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Корневые DOM-узлы: основной React-рендер и портал модального окна. -->
     <div id="root"></div>
     <div id="modal"></div>
+
+    <!-- Загрузка entrypoint Vite-приложения. -->
     <script type="module" src="/src/index.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
+/* Корневой контейнер приложения задает общий фон и ограничивает горизонтальный скролл. */
 .page {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: clip;
@@ -7,23 +8,27 @@
   background: #ffffff;
 }
 
+/* Обертка main фиксирует основную семантическую область страницы. */
+.main {
+  display: block;
+}
+
+/* Контейнер локализованного контента поддерживает плавный fade при смене языка. */
 .localizedContent {
   will-change: opacity;
   opacity: 1;
   transition: opacity var(--language-fade-ms, 320ms) cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Класс активируется во время переключения языка и временно скрывает контент. */
 .localizedContentFadingOut {
   opacity: 0;
   pointer-events: none;
 }
 
+/* Упрощенный режим для пользователей с ограничением анимации. */
 @media (prefers-reduced-motion: reduce) {
   .localizedContent {
-    transition: none;
-  }
-
-  .localizedContentFadingOut {
     transition: none;
   }
 }

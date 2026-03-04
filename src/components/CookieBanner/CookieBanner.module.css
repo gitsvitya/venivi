@@ -1,3 +1,4 @@
+/* Баннер фиксируется снизу экрана и информирует пользователя о cookie-политике. */
 .banner {
   position: fixed;
   left: 50%;
@@ -23,6 +24,7 @@
   backdrop-filter: blur(8px);
 }
 
+/* Текст объясняет назначение cookie-файлов и условия продолжения работы с сайтом. */
 .text {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -32,6 +34,7 @@
   text-wrap: balance;
 }
 
+/* Кнопка закрывает баннер и сохраняет выбор пользователя в localStorage. */
 .button {
   flex-shrink: 0;
   border: 1px solid rgba(255, 206, 0, 0.38);
@@ -48,6 +51,7 @@
   transition: background-color 160ms ease, border-color 160ms ease;
 }
 
+/* Hover-состояние усиливает контраст кнопки баннера. */
 .button:hover {
   background:
     linear-gradient(180deg, rgba(255, 206, 0, 0.28), rgba(255, 206, 0, 0.14)),
@@ -55,20 +59,20 @@
   border-color: rgba(255, 206, 0, 0.62);
 }
 
+/* Focus-состояние обеспечивает заметный контур для клавиатурной навигации. */
 .button:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.55);
 }
 
+/* Мобильная адаптация перестраивает баннер в колонку и экономит место по ширине. */
 @media (max-width: 650px) {
   .banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    left: 50%;
     bottom: 12px;
     width: calc(100vw - 24px);
     max-width: none;
-    transform: translateX(-50%);
     padding: 12px;
   }
 

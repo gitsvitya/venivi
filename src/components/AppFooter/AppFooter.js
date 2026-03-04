@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./AppFooter.module.css";
 
 function AppFooter() {
+  // Футер завершает страницу, показывает период проекта и внешнюю ссылку на сайт автора.
   return (
-    <div className={styles.appFooter}>
+    <footer className={styles.appFooter}>
       <div className={styles.container}>
-        <nav className={styles.navigation}>
+        <div className={styles.navigation}>
           <p className={styles.paragraph}>2013 - 2014 | venivi.ru</p>
           <a
             href="https://svitya.com/"
@@ -15,9 +16,9 @@ function AppFooter() {
           >
             svitya.com
           </a>
-        </nav>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

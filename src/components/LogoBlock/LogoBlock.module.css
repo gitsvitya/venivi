@@ -1,10 +1,10 @@
+/* Блок героя задает теплый градиентный фон для первого экрана. */
 .logoBlock {
-  background:
-    linear-gradient(180deg, #fffdf7 0%, #fff7df 100%);
+  background: linear-gradient(180deg, #fffdf7 0%, #fff7df 100%);
   width: 100%;
-  transition: all 0.5s linear;
 }
 
+/* Контейнер выравнивает логотип и текстовый блок по горизонтали. */
 .container {
   max-width: 1440px;
   display: flex;
@@ -12,78 +12,69 @@
   align-items: center;
   padding: 56px 50px;
   gap: clamp(40px, 8vw, 140px);
-  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Логотип рендерится как фон фиксированной пропорции без деформации. */
 .logo {
-  background-image: url('../../images/veniviLogo.png');
+  background-image: url("../../images/veniviLogo.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: min(244px, 28vw);
   aspect-ratio: 243.61 / 220;
-  height: auto;
   align-self: center;
-  transition: all 0.5s linear;
   flex-shrink: 0;
 }
 
+/* Текстовый контейнер группирует брендовый заголовок и подзаголовки. */
 .textContainer {
   display: flex;
   flex-direction: column;
   max-width: 780px;
-  transition: all 0.5s linear;
 }
 
+/* Название проекта задает самый крупный типографический акцент блока. */
 .textVenivi {
-  font-family: 'Roboto', sans-serif;
-  margin: 0 0 20px 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 20px;
+  font-weight: 700;
   font-size: clamp(44px, 7vw, 76px);
   line-height: 1.05;
-  font-weight: 700;
   letter-spacing: -0.02em;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Главный заголовок уточняет, что это за проект и какую задачу он решал. */
 .textAbout {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: clamp(20px, 2vw, 24px);
   line-height: 1.35;
-  margin: 0 0 20px 0;
-  padding: 0;
-  transition: all 0.5s linear;
+  margin: 0 0 20px;
   text-rendering: optimizeLegibility;
 }
 
+/* Подзаголовок описывает слоган платформы в более мягком цвете текста. */
 .textLogo {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: clamp(20px, 2vw, 24px);
   line-height: 1.35;
-  padding: 0;
   margin: 0;
   color: #393c43;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Планшетная адаптация уменьшает расстояние между логотипом и текстом. */
 @media (max-width: 941px) {
   .container {
     gap: 70px;
   }
 }
 
-
+/* Адаптация для небольших экранов корректирует отступы и размеры текста. */
 @media (max-width: 769px) {
   .container {
     justify-content: space-between;
@@ -99,20 +90,19 @@
     margin-bottom: 30px;
   }
 
-  .textAbout {
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 28px;
-    max-width: 350px;
-  }
-
+  .textAbout,
   .textLogo {
     font-size: 20px;
     line-height: 28px;
     max-width: 350px;
   }
+
+  .textAbout {
+    margin-bottom: 10px;
+  }
 }
 
+/* Мобильная адаптация перестраивает блок в колонку и центрирует текст. */
 @media (max-width: 501px) {
   .container {
     padding: 20px;
@@ -133,14 +123,13 @@
     text-align: center;
   }
 
-  .textAbout {
-    margin-bottom: 10px;
+  .textAbout,
+  .textLogo {
     max-width: 350px;
     text-align: center;
   }
 
-  .textLogo {
-    max-width: 350px;
-    text-align: center;
+  .textAbout {
+    margin-bottom: 10px;
   }
 }

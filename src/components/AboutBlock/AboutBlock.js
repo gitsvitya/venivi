@@ -1,47 +1,40 @@
 import React from "react";
 import styles from "./AboutBlock.module.css";
 
-function AboutBlock(props) {
+function AboutBlock({ text }) {
+  // Секция описывает идею проекта, ключевые результаты и причины закрытия.
   return (
-    <div className={styles.aboutBlock}>
+    <section className={styles.aboutBlock} aria-labelledby="about-title">
       <div className={styles.container}>
-        <h2 className={styles.header}>{props.text.aboutBlockHeader}</h2>
+        <h2 id="about-title" className={styles.header}>
+          {text.aboutBlockHeader}
+        </h2>
         <div className={styles.textBoxes}>
-          <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>
-              {props.text.aboutBlockTextBoxHeaderLeft}
-            </h3>
+          <article className={styles.textBox}>
+            <h3 className={styles.textBoxHeader}>{text.aboutBlockTextBoxHeaderLeft}</h3>
             <p className={styles.textBoxParagraph}>
-              {props.text.aboutBlockTextBoxParagraphLeft}
+              {text.aboutBlockTextBoxParagraphLeft}
             </p>
-          </div>
-          <div className={styles.textBox}>
+          </article>
+          <article className={styles.textBox}>
             <h3 className={styles.textBoxHeader}>
-              {props.text.aboutBlockTextBoxHeaderCenter}
+              {text.aboutBlockTextBoxHeaderCenter}
             </h3>
             <ul className={styles.textBoxListItems}>
-              <li className={styles.textBoxListItem}>
-                {props.text.aboutBlockLestItemOne}
-              </li>
-              <li className={styles.textBoxListItem}>
-                {props.text.aboutBlockLestItemTwo}
-              </li>
-              <li className={styles.textBoxListItem}>
-                {props.text.aboutBlockLestItemThree}
-              </li>
+              <li className={styles.textBoxListItem}>{text.aboutBlockLestItemOne}</li>
+              <li className={styles.textBoxListItem}>{text.aboutBlockLestItemTwo}</li>
+              <li className={styles.textBoxListItem}>{text.aboutBlockLestItemThree}</li>
             </ul>
-          </div>
-          <div className={styles.textBox}>
-            <h3 className={styles.textBoxHeader}>
-              {props.text.aboutBlockTextBoxHeaderRight}
-            </h3>
+          </article>
+          <article className={styles.textBox}>
+            <h3 className={styles.textBoxHeader}>{text.aboutBlockTextBoxHeaderRight}</h3>
             <p className={styles.textBoxParagraph}>
-              {props.text.aboutBlockTextBoxParagraphRight}
+              {text.aboutBlockTextBoxParagraphRight}
             </p>
-          </div>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

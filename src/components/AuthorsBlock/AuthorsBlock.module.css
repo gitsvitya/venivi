@@ -1,44 +1,41 @@
+/* Секция авторов отделяет историю команды от остальных информационных блоков. */
 .authorsBlock {
   width: 100%;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #f7f4eb 100%);
-  transition: all 0.5s linear;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f4eb 100%);
 }
 
+/* Контейнер выравнивает заголовок и карточки авторов в общей сетке страницы. */
 .container {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 56px 50px;
-  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  transition: all 0.5s linear;
 }
 
+/* Заголовок секции формирует смысловой вход в блок с участниками проекта. */
 .header {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.1;
-  padding: 0;
-  margin: 0 0 50px 0;
+  margin: 0 0 50px;
   text-align: center;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Сетка карточек распределяет роли проекта по трем колонкам. */
 .textBoxes {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
   align-items: stretch;
   gap: 24px;
-  transition: all 0.5s linear;
 }
 
+/* Карточка оформляет информацию о конкретной роли или группе участников. */
 .textBox {
   width: 100%;
   display: flex;
@@ -49,43 +46,40 @@
   border: 1px solid rgba(16, 17, 20, 0.08);
   border-radius: 18px;
   box-shadow: 0 8px 22px rgba(16, 17, 20, 0.06);
-  transition: all 0.5s linear;
 }
 
+/* Заголовок карточки выделяет тему отдельного блока про команду. */
 .textBoxHeader {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2;
-  padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   width: 100%;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Абзац карточки хранит описание роли и вклада в проект. */
 .textBoxParagraph {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
-  padding: 0;
   margin: auto 0;
   width: 100%;
   text-align: left;
   color: #20242b;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* На средних экранах карточки располагаются в одну колонку для лучшей читаемости. */
 @media (max-width: 1000px) {
   .textBoxes {
     grid-template-columns: 1fr;
   }
 }
 
+/* Планшетная адаптация уменьшает внутренние отступы и размер текста карточек. */
 @media (max-width: 769px) {
   .container {
     padding: 30px;
@@ -116,6 +110,7 @@
   }
 }
 
+/* Мобильная адаптация дополнительно уменьшает типографику карточек. */
 @media (max-width: 501px) {
   .container {
     padding: 20px;
@@ -135,9 +130,6 @@
   }
 
   .textBoxParagraph {
-    padding: 0;
-    box-sizing: border-box;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
   }

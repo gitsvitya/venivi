@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// Конфигурация Vite подключает React-плагин и позволяет обрабатывать JSX в файлах .js.
 export default defineConfig({
   base: "./",
   plugins: [

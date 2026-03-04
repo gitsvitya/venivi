@@ -1,9 +1,11 @@
+/* Базовый reset задает единый box-model для всех элементов и псевдоэлементов. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Корневые переменные фиксируют цветовую систему, тени и радиусы интерфейса. */
 :root {
   --color-ink: #101114;
   --color-ink-soft: #2a2d33;
@@ -20,10 +22,12 @@
   --focus-ring: 0 0 0 3px rgba(246, 196, 14, 0.55);
 }
 
+/* Плавная прокрутка используется для навигации в пределах страницы. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Глобальные стили body задают фон, типографику и сглаживание текста. */
 body {
   margin: 0;
   color: var(--color-ink);
@@ -36,22 +40,26 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Правило убирает подсветку tap на мобильных устройствах для ссылок и кнопок. */
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Общий контур фокуса поддерживает клавиатурную доступность. */
 :focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
   border-radius: 10px;
 }
 
+/* Стиль выделения текста усиливает визуальную идентичность проекта. */
 ::selection {
   background: rgba(246, 196, 14, 0.45);
   color: var(--color-ink);
 }
 
+/* Правило отключает анимации и плавные переходы для пользователей с reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -65,23 +73,35 @@ a {
   }
 }
 
+/* Подключение обычного начертания шрифта Roboto для основного текста сайта. */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/Roboto-Regular.woff2') format('woff2'), url('fonts/Roboto-Regular.woff') format('woff');
+  font-display: swap;
+  src:
+    url("fonts/Roboto-Regular.woff2") format("woff2"),
+    url("fonts/Roboto-Regular.woff") format("woff");
 }
 
+/* Подключение жирного начертания Roboto для заголовков и акцентных элементов. */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  src: url('fonts/Roboto-Bold.woff2') format('woff2'), url('fonts/Roboto-Bold.woff') format('woff');
+  font-display: swap;
+  src:
+    url("fonts/Roboto-Bold.woff2") format("woff2"),
+    url("fonts/Roboto-Bold.woff") format("woff");
 }
 
+/* Подключение легкого начертания Roboto для второстепенных текстов. */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
-  src: url('fonts/Roboto-Light.woff2') format('woff2'), url('fonts/Roboto-Light.woff') format('woff');
+  font-display: swap;
+  src:
+    url("fonts/Roboto-Light.woff2") format("woff2"),
+    url("fonts/Roboto-Light.woff") format("woff");
 }

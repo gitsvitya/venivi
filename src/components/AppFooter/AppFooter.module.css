@@ -1,92 +1,94 @@
+/* Футер создает нижнюю контрастную плашку и завершает композицию страницы. */
 .appFooter {
-  background:
-    linear-gradient(180deg, #c92424 0%, #a91c1c 100%);
+  background: linear-gradient(180deg, #c92424 0%, #a91c1c 100%);
   width: 100%;
-  transition: all 0.5s linear;
 }
 
+/* Контейнер задает общий ритм отступов и центрирует содержимое футера. */
 .container {
   max-width: 1440px;
   padding: 28px 50px;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  transition: all 0.5s linear;
 }
 
+/* Внутренний блок разводит дату проекта и внешнюю ссылку по краям. */
 .navigation {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.5s linear;
 }
 
+/* Текст в футере показывает период активности проекта. */
 .paragraph {
-  padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: #FFFFFF;
-  transition: all 0.5s linear;
+  color: #ffffff;
   text-rendering: optimizeLegibility;
   opacity: 0.92;
 }
 
+/* Ссылка оформляется как кнопка, чтобы визуально поддержать элементы в хедере. */
 .link {
   padding: 8px 16px;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
   border: 1px solid rgba(255, 255, 255, 0.45);
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   min-width: 132px;
   text-align: center;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
+/* Hover-эффект повышает визуальную обратную связь при наведении на ссылку. */
 .link:hover {
   background-color: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.72);
-  transition: all 0.5s linear;
 }
 
+/* Focus-эффект поддерживает доступность ссылки при клавиатурной навигации. */
 .link:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.55);
 }
 
+/* Планшетная адаптация уменьшает горизонтальные отступы футера. */
 @media (max-width: 769px) {
   .container {
     padding: 30px;
   }
 }
 
+/* Мобильная адаптация перестраивает содержимое в колонку и уменьшает кегль текста. */
 @media (max-width: 501px) {
   .container {
     padding: 20px;
   }
+
   .navigation {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
+
   .paragraph {
     font-size: 16px;
   }
+
   .link {
     font-size: 16px;
     line-height: 22px;

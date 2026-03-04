@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import styles from "./Modal.module.css";
 
+// Селектор описывает интерактивные элементы, между которыми удерживается фокус внутри модалки.
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
@@ -12,20 +13,23 @@ const Modal = ({
   isClosing = false,
   transitionMs = 220,
 }) => {
-  const container = document.querySelector("#modal");
+  // Контейнер указывает DOM-узел, в который портал рендерит модальное окно поверх приложения.
+  const container = document.getElementById("modal");
   const modalWindowRef = React.useRef(null);
   const closeButtonRef = React.useRef(null);
   const closeModalRef = React.useRef(closeModal);
 
+  // Эффект обновляет ссылку на актуальный closeModal, чтобы обработчик клавиатуры не держал устаревшее замыкание.
   React.useEffect(() => {
     closeModalRef.current = closeModal;
   }, [closeModal]);
 
+  // Эффект блокирует скролл, управляет фокусом и закрытием по Escape/Tab во время жизни модального окна.
   React.useEffect(() => {
     const prevFocusedElement = document.activeElement;
     const prevBodyOverflow = document.body.style.overflow;
 
-    function closeModalByEsc(evt) {
+    function handleKeyDown(evt) {
       if (evt.key === "Escape") {
         closeModalRef.current();
         return;
@@ -36,6 +40,7 @@ const Modal = ({
       }
 
       const modalElement = modalWindowRef.current;
+
       if (!modalElement) {
         return;
       }
@@ -46,6 +51,7 @@ const Modal = ({
         if (!(element instanceof HTMLElement)) {
           return false;
         }
+
         return !element.hasAttribute("disabled");
       });
 
@@ -67,23 +73,26 @@ const Modal = ({
       }
     }
 
-    document.addEventListener("keydown", closeModalByEsc);
+    document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
 
     return () => {
-      document.removeEventListener("keydown", closeModalByEsc);
+      document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = prevBodyOverflow;
+
       if (prevFocusedElement instanceof HTMLElement) {
         prevFocusedElement.focus();
       }
     };
   }, []);
 
+  // Условие защищает приложение, если контейнер модалки отсутствует в index.html.
   if (!container) {
     return null;
   }
 
+  // Портал выводит окно и оверлей поверх корневого React-дерева.
   return ReactDOM.createPortal(
     <>
       <div

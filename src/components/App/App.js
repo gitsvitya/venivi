@@ -10,17 +10,32 @@ import CookieBanner from "../CookieBanner/CookieBanner";
 import { rusLng, engLng } from "../../utils/lng";
 import { LANGUAGE_SWITCH_FADE_MS } from "../../constants/ui";
 
+// Ключ для localStorage, который хранит факт закрытия cookie-баннера.
 const COOKIE_BANNER_STORAGE_KEY = "venivi-cookie-banner-dismissed";
 
+// Функция обновляет содержимое одного meta-тега, если он существует в документе.
+function updateMeta(selector, content) {
+  const element = document.querySelector(selector);
+
+  if (element) {
+    element.setAttribute("content", content);
+  }
+}
+
 function App() {
+  // Состояние определяет текущий язык интерфейса по языку браузера при первом рендере.
   const [language, setLanguage] = React.useState(() => {
     const browserLanguage =
       typeof navigator !== "undefined" ? navigator.language.toLowerCase() : "ru";
 
     return browserLanguage.startsWith("ru") ? "ru" : "en";
   });
+
+  // Состояние управляет анимацией плавного исчезновения контента при смене языка.
   const [isLanguageFadingOut, setIsLanguageFadingOut] = React.useState(false);
   const languageTransitionTimeoutRef = React.useRef(null);
+
+  // Состояние определяет, нужно ли показывать cookie-баннер, с учетом сохраненного выбора пользователя.
   const [isCookieBannerVisible, setIsCookieBannerVisible] = React.useState(() => {
     if (typeof window === "undefined") {
       return false;
@@ -33,51 +48,25 @@ function App() {
     }
   });
 
-  let currentText = engLng;
+  // Выбранный словарь интерфейса вычисляется из текущего языка и используется во всех блоках страницы.
+  const currentText = language === "ru" ? rusLng : engLng;
 
-  if (language === "en") currentText = engLng;
-  else currentText = rusLng;
-
+  // Эффект синхронизирует SEO-метаданные и атрибут lang в html с выбранным языком.
   React.useEffect(() => {
     document.title = currentText.pageTitle;
-    document.documentElement.lang = language === "en" ? "en" : "ru";
+    document.documentElement.lang = language;
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    const ogLocale = document.querySelector('meta[property="og:locale"]');
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    const twitterDescription = document.querySelector(
-      'meta[name="twitter:description"]'
+    updateMeta('meta[name="description"]', currentText.pageMetaDescription);
+    updateMeta('meta[property="og:title"]', currentText.pageOgTitle);
+    updateMeta('meta[property="og:description"]', currentText.pageOgDescription);
+    updateMeta('meta[property="og:locale"]', currentText.pageOgLocale);
+    updateMeta('meta[name="twitter:title"]', currentText.pageTwitterTitle);
+    updateMeta(
+      'meta[name="twitter:description"]',
+      currentText.pageTwitterDescription
     );
+
     const schemaScript = document.getElementById("seo-schema");
-
-    if (metaDescription) {
-      metaDescription.setAttribute("content", currentText.pageMetaDescription);
-    }
-
-    if (ogTitle) {
-      ogTitle.setAttribute("content", currentText.pageOgTitle);
-    }
-
-    if (ogDescription) {
-      ogDescription.setAttribute("content", currentText.pageOgDescription);
-    }
-
-    if (ogLocale) {
-      ogLocale.setAttribute("content", currentText.pageOgLocale);
-    }
-
-    if (twitterTitle) {
-      twitterTitle.setAttribute("content", currentText.pageTwitterTitle);
-    }
-
-    if (twitterDescription) {
-      twitterDescription.setAttribute(
-        "content",
-        currentText.pageTwitterDescription
-      );
-    }
 
     if (schemaScript) {
       schemaScript.textContent = JSON.stringify(
@@ -100,6 +89,7 @@ function App() {
     }
   }, [currentText, language]);
 
+  // Эффект очищает таймер анимации языка при размонтировании компонента.
   React.useEffect(() => {
     return () => {
       if (languageTransitionTimeoutRef.current) {
@@ -108,6 +98,7 @@ function App() {
     };
   }, []);
 
+  // Обработчик запускает анимацию смены языка и меняет язык после завершения fade-out.
   function handleLanguageChange(nextLanguage) {
     if (nextLanguage === language || isLanguageFadingOut) {
       return;
@@ -126,16 +117,16 @@ function App() {
     }, LANGUAGE_SWITCH_FADE_MS);
   }
 
+  // Обработчик скрывает cookie-баннер и сохраняет решение пользователя в localStorage.
   function closeCookieBanner() {
     setIsCookieBannerVisible(false);
 
     try {
       window.localStorage.setItem(COOKIE_BANNER_STORAGE_KEY, "1");
-    } catch {
-      // Ignore storage errors (private mode / disabled storage).
-    }
+    } catch {}
   }
 
+  // Разметка собирает страницу из секций, прокидывает локализованный текст и состояние UI-компонентов.
   return (
     <div
       className={styles.page}
@@ -148,8 +139,8 @@ function App() {
       >
         <AppHeader
           text={currentText}
-          ChangeLanguage={handleLanguageChange}
-          Language={language}
+          changeLanguage={handleLanguageChange}
+          language={language}
         />
         <main className={styles.main}>
           <LogoBlock text={currentText} />

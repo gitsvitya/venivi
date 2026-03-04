@@ -1,44 +1,41 @@
+/* Блок с описанием проекта использует яркий фон для визуального разделения секций. */
 .aboutBlock {
   width: 100%;
-  background:
-    linear-gradient(180deg, #ffd42a 0%, #f4c30b 100%);
-  transition: all 0.5s linear;
+  background: linear-gradient(180deg, #ffd42a 0%, #f4c30b 100%);
 }
 
+/* Контейнер секции центрирует содержимое и задает единые внешние отступы. */
 .container {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 56px 50px;
-  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  transition: all 0.5s linear;
 }
 
+/* Заголовок секции выделяет основной вопрос о сути проекта. */
 .header {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.1;
-  padding: 0;
-  margin: 0 0 50px 0;
+  margin: 0 0 50px;
   text-align: center;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Сетка карточек раскладывает три смысловых блока в одну строку. */
 .textBoxes {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
   align-items: stretch;
   gap: 24px;
-  transition: all 0.5s linear;
 }
 
+/* Карточка хранит один смысловой фрагмент и визуально отделяется рамкой и тенью. */
 .textBox {
   width: 100%;
   display: flex;
@@ -49,63 +46,58 @@
   border: 1px solid rgba(16, 17, 20, 0.08);
   border-radius: 18px;
   box-shadow: 0 10px 24px rgba(120, 86, 0, 0.08);
-  transition: all 0.5s linear;
 }
 
+/* Заголовок карточки задает локальный акцент внутри каждого блока. */
 .textBoxHeader {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2;
-  padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   width: 100%;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Абзац карточки используется для описательного текста. */
 .textBoxParagraph {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
-  padding: 0;
   margin: auto 0;
   width: 100%;
   text-align: left;
   color: #1f2329;
-  transition: all 0.5s linear;
   text-rendering: optimizeLegibility;
 }
 
+/* Список карточки применяется для отображения метрик проекта. */
 .textBoxListItems {
   list-style: disc;
   padding-left: 20px;
   margin: auto 0;
   width: 100%;
-  transition: all 0.5s linear;
 }
 
+/* Элемент списка оформляет отдельную метрику в карточке результатов. */
 .textBoxListItem {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
-  padding: 0;
-  margin: 0 0 6px 0;
-  transition: all 0.5s linear;
+  margin: 0 0 6px;
   text-rendering: optimizeLegibility;
 }
 
+/* На средних экранах карточки перестраиваются в одну колонку для читаемости. */
 @media (max-width: 1000px) {
   .textBoxes {
     grid-template-columns: 1fr;
   }
 }
 
+/* Планшетная адаптация уменьшает внутренние отступы и межблочные расстояния. */
 @media (max-width: 769px) {
   .container {
     padding: 30px;
@@ -127,20 +119,16 @@
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 15px;
-    /* text-align: left; */
   }
 
-  .textBoxParagraph {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
+  .textBoxParagraph,
   .textBoxListItem {
     font-size: 16px;
     line-height: 1.5;
   }
 }
 
+/* Мобильная адаптация дополнительно уменьшает кегль текста и отступы карточек. */
 @media (max-width: 501px) {
   .container {
     padding: 20px;
@@ -149,7 +137,6 @@
   .header {
     font-size: 28px;
     line-height: 32px;
-
   }
 
   .textBox {
@@ -160,16 +147,8 @@
     margin-bottom: 10px;
   }
 
-  .textBoxParagraph {
-    padding: 0;
-    box-sizing: border-box;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
+  .textBoxParagraph,
   .textBoxListItem {
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
   }

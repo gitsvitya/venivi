@@ -1,6 +1,7 @@
 import styles from "./ModalOverlay.module.css";
 
 const ModalOverlay = ({ onClick, isClosing = false, transitionMs = 220 }) => {
+  // Оверлей затемняет фон и закрывает модальное окно по клику вне контента.
   return (
     <div
       className={`${styles.modalOverlay} ${

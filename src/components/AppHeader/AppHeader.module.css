@@ -1,63 +1,57 @@
+/* Хедер задает контрастную верхнюю плашку и отделяет ее тенью от контента. */
 .header {
-  background:
-    linear-gradient(180deg, #df2626 0%, #c92020 100%);
+  background: linear-gradient(180deg, #df2626 0%, #c92020 100%);
   width: 100%;
-  transition: all 0.5s linear;
   box-shadow: 0 8px 24px rgba(142, 20, 20, 0.22);
 }
 
+/* Внутренний контейнер выравнивает кнопку языка по правому краю. */
 .resCon {
   max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 30px 50px 30px 50px;
-  box-sizing: border-box;
+  padding: 30px 50px;
   margin-left: auto;
   margin-right: auto;
-  transition: all 0.5s linear;
 }
 
+/* Кнопка переключения языка выделена пилюльной формой и контрастной рамкой. */
 .langButton {
   padding: 8px 16px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   background-color: rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  width: auto;
   min-width: 72px;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   text-rendering: optimizeLegibility;
-  transition: all 0.5s linear;
   border-radius: 999px;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
+/* Hover-стейт усиливает контраст кнопки языка. */
 .langButton:hover {
   background-color: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.72);
-  transition: all 0.5s linear;
 }
 
+/* Focus-стейт сохраняет визуальную доступность для клавиатурной навигации. */
 .langButton:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.55);
 }
 
+/* Планшетная адаптация уменьшает внешние отступы хедера. */
 @media (max-width: 769px) {
   .resCon {
-    margin-left: 0;
-    margin-right: 0;
     padding: 30px;
-  }
-
-  .langButton {
-    margin-right: 0;
   }
 }
 
+/* Мобильная адаптация уменьшает размеры кнопки языка. */
 @media (max-width: 501px) {
   .resCon {
     padding: 20px;

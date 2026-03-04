@@ -1,3 +1,4 @@
+/* Оверлей затемняет страницу под модалкой и визуально отделяет активный слой. */
 .modalOverlay {
   display: flex;
   background:
@@ -17,11 +18,13 @@
   animation: overlayEnter var(--modal-transition-ms, 220ms) ease;
 }
 
+/* Класс закрытия плавно скрывает оверлей вместе с модальным окном. */
 .modalOverlayClosing {
   opacity: 0;
   backdrop-filter: blur(0);
 }
 
+/* Анимация появления оверлея синхронизирована с анимацией модального окна. */
 @keyframes overlayEnter {
   from {
     opacity: 0;
